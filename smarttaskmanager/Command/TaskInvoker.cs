@@ -21,7 +21,6 @@ namespace smarttaskmanager.Command
 
         public void ExecuteCommand(ICommand command)
         {
-            // сохраняем состояние ДО выполнения
             _undoStack.Push(_receiver.CreateMemento());
 
             command.Execute();
