@@ -25,7 +25,7 @@ namespace smarttaskmanager.Command
 
         public void Undo()
         {
-            // можно не реализовывать или сделать позже через Memento
+            
         }
     }
 }
