@@ -11,7 +11,6 @@ namespace smarttaskmanager.Command
     {
         private TaskReceiver _receiver;
 
-        // теперь храним TaskItem
         private List<TaskItem> _backup;
 
         public ClearTasksCommand(TaskReceiver receiver)
@@ -21,7 +20,6 @@ namespace smarttaskmanager.Command
 
         public void Execute()
         {
-            // копируем список задач
             _backup = new List<TaskItem>(_receiver.Tasks);
 
             _receiver.Clear();
