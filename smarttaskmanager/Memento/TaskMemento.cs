@@ -13,7 +13,6 @@ namespace smarttaskmanager.Memento
 
         public TaskMemento(List<TaskItem> tasks)
         {
-            // глубокая копия списка
             State = tasks.Select(t => Clone(t)).ToList();
         }
 
@@ -21,7 +20,6 @@ namespace smarttaskmanager.Memento
         {
             var copy = new TaskItem(task.Title);
 
-            // восстанавливаем состояние
             switch (task.GetStateName())
             {
                 case "In Progress":
