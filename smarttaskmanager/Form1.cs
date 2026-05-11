@@ -12,7 +12,6 @@ namespace smarttaskmanager
         private TaskReceiver receiver = new TaskReceiver();
         private TaskInvoker invoker;
 
-
         public Form1()
         {
             InitializeComponent();
@@ -50,13 +49,10 @@ namespace smarttaskmanager
             {
                 var strategy = GetStrategy();
 
-                // применяем стратегию к тексту
                 var processed = strategy.Process(txtTask.Text);
 
-                // создаём объект задачи (State Context)
                 var task = new TaskItem(processed);
 
-                // передаём TaskItem в команду
                 var cmd = new AddTaskCommand(receiver, task);
                 invoker.ExecuteCommand(cmd);
 
@@ -103,7 +99,7 @@ namespace smarttaskmanager
             listBox1.DataSource = null;
             listBox1.DataSource = receiver.Tasks;
 
-            lblCount.Text = $"Задач: {receiver.Tasks.Count}";
+            lblCount.Text = $"Г‡Г Г¤Г Г·: {receiver.Tasks.Count}";
         }
 
         private void lblCount_Click(object sender, EventArgs e)
