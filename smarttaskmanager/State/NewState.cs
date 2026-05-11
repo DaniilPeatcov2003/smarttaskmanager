@@ -10,7 +10,6 @@ namespace smarttaskmanager.State
     {
         public void Handle(TaskItem task)
         {
-            // переход в InProgress
             task.SetState(new InProgressState());
         }
 
